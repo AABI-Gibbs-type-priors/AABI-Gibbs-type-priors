@@ -1,7 +1,9 @@
 ---
-title: "GibbsTypePriors.jl"
+title : GibbsTypePriors.jl
+options:
+  doctype :  github
+  cache : true
 ---
-
 
 
 ![Lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
@@ -34,19 +36,15 @@ The package is developed for Julia 1.5. Much of its functionality rests on the '
 
 Press `]` in the Julia interpreter to enter the Pkg mode and input:
 
-```julia
+```julia; eval = false
 pkg> add https://github.com/konkam/GibbsTypePriors
 ```
 
-
-
 Alternatively, you may run:
 
-```julia
+```julia; eval = false
 julia> using Pkg; Pkg.add(url = "https://github.com/konkam/GibbsTypePriors")
 ```
-
-
 
 # How to use the package
 
@@ -58,27 +56,11 @@ using GibbsTypePriors
 Pkn_NGG(10, 500, 1.2, 0.8)
 ```
 
-```
-8.984618037609138e-11
-```
-
-
-
-
-
 The same may be done for the 2-parameter Poisson Dirichlet, also named the Pitman-Yor process:
 
 ```julia
 Pkn_PY(10, 500, 1.2, 0.8)
 ```
-
-```
-2.562372640654159e-5
-```
-
-
-
-
 
 We also provide the same function for the Dirichlet process:
 
@@ -86,19 +68,11 @@ We also provide the same function for the Dirichlet process:
 Pkn_Dirichlet(10, 500, 1.2)
 ```
 
-```
-0.09844487393917364
-```
-
-
-
-
-
 # Illustration of the various priors:
 
 The following figure shows a comparison of the priors distribution on the number of clusters induced by a Dirichlet process, a 2-parameter Poisson-Dirichlet process and a Normalised Inverse Gamma process.
 
-```julia
+```julia; results = "hidden"
 using GibbsTypePriors, DataFrames, DataFramesMeta, RCall
 R"library(tidyverse)"
 
@@ -118,9 +92,6 @@ R"png('Illustration.png')
 plot(p)
 dev.off()"
 ```
-
-
-
  ![](Illustration.png)
 
 References:
@@ -138,67 +109,24 @@ For experimental purposes or if you happen to reach the limits of numerical accu
 using Nemo
 GibbsTypePriors.Cnk(6, 5, 0.5) |> Nemo.accuracy_bits
 ```
-
-```
-4997
-```
-
-
-
 ```julia
 GibbsTypePriors.Cnk(6, 5, 0.5, 200) |> Nemo.accuracy_bits
 ```
-
-```
-197
-```
-
-
-
 ```julia
 GibbsTypePriors.Vnk_NGG(100,50, 0.5, 0.2) |> Nemo.accuracy_bits
 ```
-
-```
-4992
-```
-
-
-
 ```julia
 GibbsTypePriors.Vnk_NGG(100,50, 0.5, 0.2, 200) |> Nemo.accuracy_bits
 ```
-
-```
-192
-```
-
-
-
 ```julia
 GibbsTypePriors.Pkn_NGG_arb(50, 100, 0.5, 0.2) |> Nemo.accuracy_bits
 ```
-
-```
-4913
-```
-
-
-
 ```julia
 GibbsTypePriors.Pkn_NGG_arb(50, 100, 0.5, 0.2, 200) |> Nemo.accuracy_bits
 ```
-
-```
-112
-```
-
-
-
-
 ## Instability of the $V_{n,k}$
 
-```julia
+```julia; eval = false
 using GibbsTypePriors, Nemo, DataFrames, DataFramesMeta, RCall
 β = 0.5
 σ = 0.2
@@ -220,8 +148,6 @@ R"png('figures/Vnk_instability.png')
   plot($p)
   dev.off()"
 ```
-
-
 
 ![](figures/Vnk_instability.png)
 
