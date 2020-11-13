@@ -2,23 +2,7 @@
 title: "GibbsTypePriors.jl"
 ---
 
-
-
-![Lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
-<!--
-![Lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)
-![Lifecycle](https://img.shields.io/badge/lifecycle-retired-orange.svg)
-![Lifecycle](https://img.shields.io/badge/lifecycle-archived-red.svg)
-![Lifecycle](https://img.shields.io/badge/lifecycle-dormant-blue.svg) -->
-[![Build Status](https://travis-ci.org/konkam/GibbsTypePriors.svg?branch=master)](https://travis-ci.org/konkam/GibbsTypePriors)
-[![codecov](https://codecov.io/gh/konkam/GibbsTypePriors/branch/master/graph/badge.svg)](https://codecov.io/gh/konkam/GibbsTypePriors)
-[![Coverage Status](https://coveralls.io/repos/github/konkam/GibbsTypePriors/badge.svg?branch=master)](https://coveralls.io/github/konkam/GibbsTypePriors?branch=master)
-<!--
-[![Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://konkam.github.io/GibbsTypePriors.jl/stable)
-[![Documentation](https://img.shields.io/badge/docs-master-blue.svg)](https://konkam.github.io/GibbsTypePriors.jl/dev)
--->
-
-Computing clusters prior distribution for Gibbs-type processes.
+Computing clusters prior distribution for Gibbs-type processes. This is an anonymised version for reviewing purposes.
 
 ## Introduction
 
